@@ -1,0 +1,26 @@
+div{
+    background-color:rgb(192, 228, 251);
+    border-radius: 5px;
+    padding: 10px;
+}
+li{
+    background-color: wheat;
+    border-radius: 5px;
+    margin: 5px;
+}
+ul{
+    background-color:rgba(4, 113, 4, 0.489);
+    padding: 5px 5px 5px 20px;
+    border-radius: 5px;
+}
+.msg{
+    background-color:rgb(34, 159, 238);
+    border-radius: 7px;
+    font-size:x-large;
+    color: white;
+}
+.edit{
+    /* text-align: center; */
+    /* line-height: 200%; */
+    padding: 5px;
+}

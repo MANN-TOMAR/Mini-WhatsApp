@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>All Chats1</h1>
+    <div>Send a Message:-> <a href="/chats/new"><button>Send</button></a></div>
+    <br>
+    <div class="chats">
+        <% for (let i=0; i < chats.length; i++) { %>
+            <h4>
+                <b>Id:</b>
+                <%= chats[i]._id %>
+            </h4>
+            <ul>
+                <li><b>From:</b>
+                    <%= chats[i].from %>
+                </li>
+                <li><b>To:</b>
+                    <%= chats[i].to %>
+                </li>
+                <li class="msg"><b>Message:</b>
+                    <%= chats[i].msg %>
+                </li>
+                <li><b>Time:</b>
+                    <%= chats[i].sendAt ? chats[i].sendAt.toString().split(" ")[4] : "N/A" %></li>
+                <li><b>Date:</b> <%= chats[i].sendAt ? chats[i].sendAt.toString().split(" ").slice(0,4).join(" ") : "N/A" %></li>
+            <li class=" edit"><a href="/chats/<%=chats[i]._id%>/edit"><button>Edit Message</button></a>
+                </li>
+            </ul>
+            <div class="edit">
+                <form action="/chats/<%=chats[i]._id%>?_method=DELETE" method="post">
+                    <button>Delete Message</button>
+                </form>
+            </div>
+            <hr>
+            <% } %>
+    </div>
+</body>
+
+</html>

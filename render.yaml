@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: mini-whatsapp
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
